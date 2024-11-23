@@ -1,0 +1,20 @@
+{
+  "p": "chirc-20",
+  "op": "deploy",
+  "tick": "chordi",
+  "maxBlock": "6400000",
+  "lim": "100",
+  "description": "Chordi is the first ChiRC-20 token",
+  "logos": [
+    "https://www.chirc20.com/chordi/chordi.png",
+    "https://www.chordinals.com/chordi/chordi.png",
+    "https://www.chirc20.com/chordi/chordi.mp4",
+    "https://www.chordinals.com/chordi/chordi.mp4"
+  ],
+  "links": [
+    "https://www.chirc20.com/chordi/",
+    "https://x.com/chordinals",
+    "https://discord.gg/TGddbKbEp4",
+    "https://www.chordinals.com/chordi/"
+  ]
+}
