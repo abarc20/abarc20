@@ -102,6 +102,7 @@ def main():
         template_json = json.load(f)
 
     # 4. & 5. Replace values in template.json
+    template_json["wallet_id"] = args.wallet_id
     template_json["target_address"] = args.address
     template_json["fee"] = args.fee
     template_json["uris"] = [uri_data_uri]
