@@ -1,0 +1,9 @@
+{
+  "wallet_id": 3,
+  "uris": ["data:image/png;base64,iVBOR"],
+  "hash": "4b23f29bc752b7ee1c8358b091f51a9eaac987be822f8a69eea930a16dc637e8",
+  "meta_uris": ["data:text/plain"],
+  "meta_hash": "bf040e7071ec28f714622d4edcd953274f4b4371afdf20b28d8ddf7aab93d75e",
+  "target_address": "",
+  "fee": 100
+}
