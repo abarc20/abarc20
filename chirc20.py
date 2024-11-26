@@ -70,13 +70,19 @@ def main():
     uri_json["tick"] = ticker
     if "amt" in args and args.amt is not None:
         uri_json["amt"] = args.amt
-    print(json.dumps(uri_json, indent=4))
+    # indent=4))
+    print(json.dumps(uri_json, indent=None, separators=(',', ':')))
+
     # Create a temporary file for metadata JSON
     with tempfile.NamedTemporaryFile(mode="w", delete=False, suffix=".json") as temp_file:
         json.dump(uri_json, temp_file, indent=None, separators=(',', ':'))
         uri_file_path = temp_file.name
     uri_data_uri = chordinals.encode_for_data_url(uri_file_path)
     uri_hash = calculate_sha256_hash(uri_file_path)
+
+    if "dryrun" in args:
+        print(uri_data_uri)
+        print(uri_hash)
 
     # 2. Create metadatafile.json using template and calculate its hash
     with open("chirc-20-mint-metadata-template.json", "r") as f:
@@ -89,13 +95,19 @@ def main():
     # metadata_json["data"]["tick"] = ticker
     # if "amt" in args and args.amt is not None:
     #    metadata_json["data"]["amt"] = args.amt
-    print(json.dumps(metadata_json, indent=4))
+    # indent=4))
+    print(json.dumps(metadata_json, indent=None, separators=(',', ':')))
+
     # Create a temporary file for metadata JSON
     with tempfile.NamedTemporaryFile(mode="w", delete=False, suffix=".json") as temp_file:
         json.dump(metadata_json, temp_file, indent=None, separators=(',', ':'))
         metadata_file_path = temp_file.name
     metadata_data_uri = chordinals.encode_for_data_url(metadata_file_path)
     metadata_hash = calculate_sha256_hash(metadata_file_path)
+
+    if "dryrun" in args:
+        print(metadata_data_uri)
+        print(metadata_hash)
 
     # 3. Start creating the mint json file; Read template.json
     with open("chirc-20-mint-template.json", "r") as f:
