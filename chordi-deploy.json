@@ -2,8 +2,8 @@
   "p": "chirc-20",
   "op": "deploy",
   "tick": "chordi",
-  "maxBlock": "6400000",
-  "lim": "100",
+  "maxBlock": "6290912",
+  "lim": "1000",
   "description": "Chordi is the first ChiRC-20 token",
   "logos": [
     "https://www.chirc20.com/chordi/chordi.png",

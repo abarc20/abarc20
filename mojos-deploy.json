@@ -1,0 +1,23 @@
+{
+  "p": "chirc-20",
+  "op": "deploy",
+  "tick": "mojos",
+  "maxBlock": "6422240",
+  "lim": "100",
+  "description": "Mojos is a widely minted early ChiRC-20 token",
+  "logos": [
+    "https://www.chirc20.com/mojos/mojos.png",
+    "https://www.chordinals.com/mojos/mojos.png",
+    "https://www.chirc20.com/mojos/mojos.apng",
+    "https://www.chirc20.com/mojos/mojos.gif",
+    "https://www.chirc20.com/mojos/mojos.mp4",
+    "https://www.chordinals.com/mojos/mojos.mp4"
+  ],
+  "links": [
+    "https://www.chirc20.com/mojos/",
+    "https://x.com/chordinals",
+    "https://discord.gg/TGddbKbEp4",
+    "https://www.chordinals.com/mojos/",
+    "https://www.chordiforge.com/mojos/"
+  ]
+}
