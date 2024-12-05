@@ -42,12 +42,14 @@ def main():
     parser.add_argument("--wallet-id", type=int,
                         required=True, help="Wallet ID (optional)")
     parser.add_argument("--address", type=str, required=True,
-                        help="Target address for the token")
+                        help="Address to send the minted token to")
     parser.add_argument("--fee", type=int, required=True, help="Fee in mojos")
     parser.add_argument("--amt", type=int,
                         help="Amount of tokens to mint (optional)")
     parser.add_argument("--dryrun", action='store_true',
                         help="Run without generating & sending transaction to the mempool")
+    parser.add_argument("--test", action='store_true',
+                        help="Use test content")
     args = parser.parse_args()
     # print("Usage: python3 chirc20_mint.py mint ticker --wallet_id 3 --address to_address --fee mojos
     #  --amt 10 (amt is optional)")
@@ -60,8 +62,8 @@ def main():
     ticker = args.ticker
 
     # 1. Encode urifile and calculate its hash
-
-    with open("chirc-20-mint-uri-template.json", "r") as f:
+    uri_template_file = "test-chirc-20-mint-uri-template.json" if args.test else "chirc-20-mint-uri-template.json"
+    with open(uri_template_file, "r") as f:
         uri_json = json.load(f)
 
     # In metadata_json, 1) replace name w/ ticker, 2) data.tick with ticker, 3) if amt
@@ -85,7 +87,8 @@ def main():
         print(uri_hash)
 
     # 2. Create metadatafile.json using template and calculate its hash
-    with open("chirc-20-mint-metadata-template.json", "r") as f:
+    metadata_template_file = "test-chirc-20-mint-metadata-template.json" if args.test else "chirc-20-mint-metadata-template.json"
+    with open(metadata_template_file, "r") as f:
         metadata_json = json.load(f)
 
     # In metadata_json, 1) replace name w/ ticker, 2) data.tick with ticker, 3) if amt
