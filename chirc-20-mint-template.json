@@ -1,9 +1,10 @@
 {
-  "wallet_id": 3,
+  "wallet_id": 2,
   "uris": [],
   "hash": "",
   "meta_uris": [],
   "meta_hash": "",
   "target_address": "",
+  "mint_from_did": false,
   "fee": 100
 }
