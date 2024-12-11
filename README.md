@@ -12,7 +12,6 @@ This script helps you mint ChiRC-20 tokens on the Chia blockchain
 ## Requirements
 
 - Python 3
-- Chordinals library (copy chordinals.py over into this chirc20 dir for now)
 - A configured Chia node with RPC access
 - NFT wallet created, see Chia NFT Minting Docs (e.g. chia wallet nft create -n "chirc-20 nft wallet")
 - The ticker being minted must have been deployed in a previous block and not yet minted out for the mint to be considered valid
