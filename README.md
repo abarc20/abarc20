@@ -20,7 +20,7 @@ This script helps you mint ChiRC-20 tokens on the Chia blockchain
 ## Usage
 
 ```
-python chirc20_mint.py mint <ticker> --wallet-id <wallet_id> --address <address> --fee <fee> [--amt <amt>] [--dryrun]
+python chirc20.py mint <ticker> --wallet-id <wallet_id> --address <address> --fee <fee> [--amt <amt>] [--dryrun]
 ```
 
 ### Arguments
@@ -38,7 +38,7 @@ python chirc20_mint.py mint <ticker> --wallet-id <wallet_id> --address <address>
 ### Example
 
 ```
-python chirc20_mint.py mint chordi --wallet-id 3 --address xch1qn98dq2xn27y... --fee 100000
+python chirc20.py mint chordi --wallet-id 3 --address xch1qn98dq2xn27y... --fee 100000
 ```
 
 ### Output
@@ -55,7 +55,7 @@ Ensure you have the necessary permissions to interact with the Chia node via RPC
 
 ### References
 
-[Chordiforge](https://www.chordiforge.com/)
+[Chordifun](https://www.chordifun.com/)
 
 [Chia NFT CLI Minting Guide](https://docs.chia.net/guides/nft-cli/)
 
