@@ -2,12 +2,15 @@
   "p": "chirc-20",
   "op": "deploy",
   "tick": "chordi",
-  "maxBlock": "6290912",
+  "maxBlock": "6345773",
   "lim": "1000",
   "description": "Chordi is the first ChiRC-20 token",
   "logos": [
+    "nft129yhhjnxn630ay9uu4n6k8eg4e40fp086lp0k56qq40qfndg03ls53d9m9",
     "https://www.chirc20.com/chordi/chordi.png",
     "https://www.chordinals.com/chordi/chordi.png",
+    "https://www.chirc20.com/chordi/chordi.apng",
+    "https://www.chirc20.com/chordi/chordi.gif",
     "https://www.chirc20.com/chordi/chordi.mp4",
     "https://www.chordinals.com/chordi/chordi.mp4"
   ],
