@@ -1,0 +1,24 @@
+{
+  "p": "abarc-20",
+  "op": "deploy",
+  "tick": "abordi",
+  "maxBlock": "1473963",
+  "lim": "1000",
+  "description": "Abordi is the first AbaRC-20 token",
+  "logos": [
+    "nft13hvra6zdm4zr053vyu9nxtpyt79hur43zmdvmsxct6rz4f8c3p6s3df92y",
+    "https://www.abarc20.com/abordi/abordi.png",
+    "https://www.abordinals.com/abordi/abordi.png",
+    "https://www.abarc20.com/abordi/abordi.apng",
+    "https://www.abarc20.com/abordi/abordi.gif",
+    "https://www.abarc20.com/abordi/abordi.mp4",
+    "https://www.abordinals.com/abordi/abordi.mp4"
+  ],
+  "links": [
+    "https://www.abarc20.com/abordi/",
+    "https://x.com/anarkoicxaba",
+    "https://discord.gg/TGddbKbEp4",
+    "https://www.abordinals.com/abordi/",
+    "https://www.chordifun.com/aba/abordi/"
+  ]
+}
