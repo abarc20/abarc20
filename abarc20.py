@@ -1,10 +1,10 @@
 """
-Script for minting a ChiRC-20 token on the Chia blockchain.
+Script for minting a AbaRC-20 token on the Aba blockchain.
 
 This script takes various arguments to configure the minting process,
 including the ticker symbol, wallet ID, target address, fee, and optional
 amount and fingerprint. It uses the `chordinals` library for URI encoding
-and interacts with the Chia node via RPC commands.
+and interacts with the Aba node via RPC commands.
 """
 
 import json
@@ -31,10 +31,10 @@ def calculate_sha256_hash(input_filename):
 
 
 def main():
-    """Parses command-line arguments and performs the ChiRC-20 token minting process.
+    """Parses command-line arguments and performs the AbaRC-20 token minting process.
     """
     parser = argparse.ArgumentParser(
-        description="Mint a ChiRC-20 token on the Chia blockchain")
+        description="Mint an AbaRC-20 token on the Aba blockchain")
     parser.add_argument("command", type=str, choices=[
                         "mint"], help="Command to execute, only mint command supported currently")
     parser.add_argument("ticker", type=str,
@@ -42,16 +42,14 @@ def main():
     parser.add_argument("--wallet-id", type=int,
                         required=True, help="Wallet ID (optional)")
     parser.add_argument("--address", type=str, required=True,
-                        help="Address to send the minted token to")
+                        help="Target address for the token")
     parser.add_argument("--fee", type=int, required=True, help="Fee in mojos")
     parser.add_argument("--amt", type=int,
                         help="Amount of tokens to mint (optional)")
     parser.add_argument("--dryrun", action='store_true',
                         help="Run without generating & sending transaction to the mempool")
-    parser.add_argument("--test", action='store_true',
-                        help="Use test content")
     args = parser.parse_args()
-    # print("Usage: python3 chirc20_mint.py mint ticker --wallet_id 3 --address to_address --fee mojos
+    # print("Usage: python3 abarc20.py mint ticker --wallet-id 3 --address to_address --fee mojos
     #  --amt 10 (amt is optional)")
     if args.command != "mint":
         print("Invalid command. Please use 'mint'")
@@ -62,8 +60,8 @@ def main():
     ticker = args.ticker
 
     # 1. Encode urifile and calculate its hash
-    uri_template_file = "test-chirc-20-mint-uri-template.json" if args.test else "chirc-20-mint-uri-template.json"
-    with open(uri_template_file, "r") as f:
+
+    with open("abarc-20-mint-uri-template.json", "r") as f:
         uri_json = json.load(f)
 
     # In metadata_json, 1) replace name w/ ticker, 2) data.tick with ticker, 3) if amt
@@ -87,8 +85,7 @@ def main():
         print(uri_hash)
 
     # 2. Create metadatafile.json using template and calculate its hash
-    metadata_template_file = "test-chirc-20-mint-metadata-template.json" if args.test else "chirc-20-mint-metadata-template.json"
-    with open(metadata_template_file, "r") as f:
+    with open("abarc-20-mint-metadata-template.json", "r") as f:
         metadata_json = json.load(f)
 
     # In metadata_json, 1) replace name w/ ticker, 2) data.tick with ticker, 3) if amt
@@ -113,7 +110,7 @@ def main():
         print(metadata_hash)
 
     # 3. Start creating the mint json file; Read template.json
-    with open("chirc-20-mint-template.json", "r") as f:
+    with open("abarc-20-mint-template.json", "r") as f:
         template_json = json.load(f)
 
     # 4. & 5. Replace values in template.json
@@ -130,8 +127,8 @@ def main():
         json.dump(template_json, temp_file, indent=4)
         temp_file_path = temp_file.name
 
-    # Construct the chia rpc command using the temporary file path
-    command = f"chia rpc wallet nft_mint_nft -j {temp_file_path}"
+    # Construct the aba rpc command using the temporary file path
+    command = f"aba rpc wallet nft_mint_nft -j {temp_file_path}"
 
     print(command)
     print(json.dumps(template_json, indent=4))
