@@ -14,7 +14,7 @@ This script helps you mint AbaRC-20 tokens on the Aba blockchain
 - Python 3
 - Abordinals library (copy chordinals.py over into this abarc20 dir for now)
 - A configured Aba node with RPC access
-- NFT wallet created, see Aba NFT Minting Docs (e.g. chia wallet nft create -n "chirc-20 nft wallet")
+- NFT wallet created, see Aba NFT Minting Docs (e.g. aba wallet nft create -n "abarc-20 nft wallet")
 - The ticker being minted must have been deployed in a previous block and not yet minted out for the mint to be considered valid
 
 ## Usage
@@ -28,7 +28,7 @@ python abarc20_mint.py mint <ticker> --wallet-id <wallet_id> --address <address>
 ```
     mint: Required command to execute (currently only supported option)
     <ticker>: Ticker symbol for the token (required)
-    --wallet-id: Wallet ID of the NFT wallet in your Aba node (required, see chia wallet show)
+    --wallet-id: Wallet ID of the NFT wallet in your Aba node (required, see aba wallet show)
     --address: Target address for the minted token to be sent to (required)
     --fee: Fee for the transaction in mojos (required)
     --amt (optional): Amount of tokens to mint (defaults to 1)
